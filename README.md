@@ -1,229 +1,369 @@
 
-# Smart Lift — Intelligent Three-Floor Elevator Control System
+<div align="center">
 
-An IoT-based smart elevator prototype that combines an ESP32-based control system with an interactive web dashboard for monitoring and operating a three-floor lift.
+# 🛗 SMART LIFT
+### Intelligent Three-Floor Elevator Control System
 
-**Live Demo:** https://smart-lift-bay.vercel.app/  
-**GitHub Repository:** https://github.com/vaibhavkumar-h/smart-lift
+**Connecting embedded hardware with an interactive web-based control dashboard.**
+
+<br/>
+
+<a href="https://smart-lift-bay.vercel.app/">
+  <img src="https://img.shields.io/badge/🚀_LIVE_DEMO-Open_Dashboard-00C853?style=for-the-badge" alt="Live Demo"/>
+</a>
+<a href="https://github.com/vaibhavkumar-h/smart-lift">
+  <img src="https://img.shields.io/badge/GitHub-Source_Code-181717?style=for-the-badge&logo=github" alt="GitHub Repository"/>
+</a>
+
+<br/><br/>
+
+<img src="https://img.shields.io/badge/React-Frontend-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React"/>
+<img src="https://img.shields.io/badge/TypeScript-Typed_Code-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/>
+<img src="https://img.shields.io/badge/Vite-Build_Tool-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite"/>
+<img src="https://img.shields.io/badge/ESP32-IoT_Controller-E7352C?style=flat-square&logo=espressif&logoColor=white" alt="ESP32"/>
+<img src="https://img.shields.io/badge/IoT-Hardware_Integration-00897B?style=flat-square" alt="IoT"/>
+<img src="https://img.shields.io/badge/Deployment-Vercel-000000?style=flat-square&logo=vercel" alt="Vercel"/>
+
+</div>
 
 ---
 
-## Overview
+## ✨ Project at a Glance
 
-Smart Lift is a hardware–software integration project designed to demonstrate how embedded systems and a web-based interface can work together to control and monitor a miniature elevator.
+Smart Lift is an **IoT-based, three-floor elevator prototype** that brings together an ESP32-based embedded controller, physical lift mechanisms, and a modern web dashboard.
 
-The project combines a physical lift prototype with a modern dashboard that presents floor information, device connectivity, door status, travel progress, and elevator operation controls in one interface.
+The project explores how hardware and software can work together to provide intuitive elevator controls, device-status visibility, and an interactive monitoring experience.
 
-The objective is to make elevator operation more intuitive, improve visibility into the system's state, and demonstrate how IoT concepts can be applied to elevator automation.
+<table>
+<tr>
+<td width="50%" valign="top">
 
-## Problem Statement
+### 🎯 The Goal
 
-Traditional elevator-control concepts can be difficult to monitor and demonstrate without a dedicated interface that brings together operational controls and device status.
+Create an accessible, interactive way to operate and monitor a miniature elevator while demonstrating embedded control, web development, and IoT integration.
 
-A prototype also needs a clear way to represent its current floor, movement state, door status, and controller connectivity. Without a unified interface, operating and observing these functions can become less convenient.
+</td>
+<td width="50%" valign="top">
 
-Smart Lift addresses this problem through a connected elevator prototype and an interactive web dashboard.
+### 💡 The Approach
 
-## Proposed Solution
+Combine a physical three-floor lift prototype with a React and TypeScript dashboard featuring floor selection, movement controls, door controls, and device information.
 
-Smart Lift combines an ESP32-based controller with a web-based control interface.
+</td>
+</tr>
+</table>
 
-The dashboard provides controls for selecting floors, moving the lift, operating the door, and returning to the ground floor. It also displays device connectivity, current floor information, travel progress, and system status.
+> 🌐 **Try it live:** [smart-lift-bay.vercel.app](https://smart-lift-bay.vercel.app/)
 
-The physical prototype demonstrates the hardware-control side of the project, while the web application provides a visual and interactive way to operate and observe the system.
+---
 
-## Key Features
+## 📸 Dashboard Preview
 
-### Interactive Elevator Dashboard
+<div align="center">
 
-- Three-floor selection: F1, F2, and F3.
-- Move Up and Move Down controls.
-- Open Door control.
-- Ground Floor control.
-- Current-floor display.
-- Travel-progress indicator.
-- Door and system-status indicators.
-- Device connection and disconnection interface.
-- ESP32 IP-address configuration field.
-- Pairing PIN field in the connection interface.
-- Sound toggle for dashboard feedback.
-- Device information panel showing controller and network details.
+### A unified interface for lift operation and monitoring
 
-### Visual Interface
+<a href="https://smart-lift-bay.vercel.app/">
+  <img src="https://placehold.co/1200x650/111111/FFFFFF/png?text=SMART+LIFT%0AOpen+the+Live+Dashboard+to+Explore" alt="Smart Lift dashboard preview placeholder" width="100%"/>
+</a>
 
-- Modern dark-themed dashboard.
-- Interactive controls and status indicators.
-- 3D visual element integrated into the landing interface.
-- Dedicated device-connection panel.
-- Responsive web layout designed to bring controls and monitoring information together.
+<sub>Open the live dashboard to explore the actual interface. Replace this placeholder with a screenshot of your running dashboard for the final project showcase.</sub>
 
-### Hardware Integration
+<br/><br/>
 
-The project is designed around an ESP32-based elevator controller and a physical three-floor lift prototype. The controller interfaces with the lift's hardware components, while the dashboard provides the user-facing control and monitoring interface.
+<a href="https://smart-lift-bay.vercel.app/">
+  <img src="https://img.shields.io/badge/EXPLORE_DASHBOARD-Click_Here-FF5252?style=for-the-badge&logo=vercel&logoColor=white" alt="Explore Dashboard"/>
+</a>
 
-## Hardware Components
+</div>
 
-The following components are part of the prototype design. Confirm the exact modules and quantities against your physical build before reproducing the project.
+---
 
-| Component | Purpose |
-|---|---|
-| ESP32 development board | Embedded control and Wi-Fi connectivity |
-| DC motor | Provides lift movement |
-| Motor driver module | Interfaces the controller with the motor |
-| Servo motor | Operates the lift door mechanism |
-| Ultrasonic sensor | Supports distance or obstruction detection |
-| OLED display (SSD1306) | Displays local system information, if enabled in the build |
-| Power supply | Powers the lift electronics and motors |
-| Connecting wires and mechanical structure | Physical assembly and electrical connections |
+## 🚀 Features
 
-**Note:** The exact motor-driver model, controller count, wiring, and power ratings depend on the assembled hardware. Verify these details before replicating the circuit.
+<table>
+<tr>
+<td width="50%" valign="top">
 
-## Software Technologies
+### 🎮 Interactive Controls
 
-- **React** — component-based user interface.
-- **TypeScript** — typed application code.
-- **Vite** — frontend development server and build tooling.
-- **CSS** — dashboard layout and visual styling.
-- **Spline integration** — 3D visual component used by the interface.
-- **ESP32 firmware** — embedded control and communication with the hardware.
-- **Vercel** — hosting for the web dashboard.
+- 🛗 Three-floor selection — F1, F2, F3
+- ⬆️ Move Up control
+- ⬇️ Move Down control
+- 🚪 Open Door control
+- 🏠 Ground Floor control
+- 🔌 Device connect/disconnect interface
 
-## System Architecture
+</td>
+<td width="50%" valign="top">
 
-```text
-        User
-         |
-         v
-  Smart Lift Web Dashboard
-  (React + TypeScript + Vite)
-         |
-         | Device communication
-         v
-     ESP32 Controller
-         |
-         v
-  Motor Driver and Actuators
-         |
-         v
-   Three-Floor Lift Prototype
-         |
-         +---- Door mechanism
-         +---- Sensor inputs
-         +---- Local display*
+### 📊 Monitoring Interface
+
+- 📍 Current-floor indicator
+- 📶 Wi-Fi and connection status
+- ⚡ Power-status display
+- 🚪 Door-state indicator
+- 📈 Travel-progress visualization
+- 🖥️ Device and network information
+- 🔊 Sound toggle
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🎨 Visual Experience
+
+- 🌑 Modern dark-themed interface
+- 🤖 Integrated 3D visual element
+- 🧩 Component-based React architecture
+- 🖱️ Interactive dashboard elements
+
+</td>
+<td width="50%" valign="top">
+
+### 🔧 Configuration
+
+- 🌐 ESP32 IP-address field
+- 🔐 Pairing PIN field
+- 📡 Device connection interface
+- 🛠️ Frontend development and production builds
+
+</td>
+</tr>
+</table>
+
+<sub>Dashboard controls and displayed statuses depend on the current application logic, firmware, and device connection. A visible control does not by itself guarantee a verified hardware operation.</sub>
+
+---
+
+## 🧩 Problem Statement
+
+Elevator automation combines physical movement, floor selection, door operation, and controller status. In a prototype, demonstrating these functions clearly can be difficult when the hardware and user interface are separate.
+
+Smart Lift explores a unified approach by connecting an interactive dashboard with an ESP32-based elevator prototype.
+
+### 🎯 Proposed Solution
+
+Develop a web-based control interface for a three-floor lift prototype, supported by embedded hardware that manages the physical system.
+
+The interface brings operation controls and status information into one place, making the prototype easier to demonstrate, inspect, and extend.
+
+### 🌟 What Makes This Project Valuable?
+
+- **Hardware + software integration:** Connects a web application concept with embedded control.
+- **Visual monitoring:** Presents floor and device information in a single interface.
+- **Modular development:** Uses reusable React components and TypeScript.
+- **Extensible design:** Provides a foundation for future telemetry, diagnostics, and secure remote communication.
+
+---
+
+## 🏗️ System Architecture
+
+```mermaid
+flowchart TD
+    A["👤 User"] --> B["🌐 Smart Lift Web Dashboard"]
+    B --> C["React + TypeScript + Vite"]
+    C --> D["Device Communication Layer"]
+    D <--> E["ESP32 Controller"]
+    E --> F["Motor Driver"]
+    F --> G["Lift Motor"]
+    E --> H["Door Actuator"]
+    I["Sensor Inputs"] --> E
+    E --> J["Optional Local Display"]
+
+    style A fill:#263238,color:#fff,stroke:#90A4AE
+    style B fill:#283593,color:#fff,stroke:#7986CB
+    style C fill:#1565C0,color:#fff,stroke:#64B5F6
+    style E fill:#B71C1C,color:#fff,stroke:#EF9A9A
+    style G fill:#1B5E20,color:#fff,stroke:#81C784
 ```
 
-\*The local display and other peripherals depend on the configured hardware build.
+### 🔄 System Workflow
 
-The dashboard and ESP32 must be able to communicate over a compatible network connection for live device control. Hosting the frontend on Vercel does not, by itself, provide remote access to an ESP32 on a private Wi-Fi network.
+1. **Connect** — Configure the device address and connection details in the dashboard.
+2. **Select** — Choose the desired floor or an available operation.
+3. **Communicate** — The frontend sends commands through the configured device communication mechanism.
+4. **Control** — The ESP32 firmware processes supported commands and interfaces with the hardware.
+5. **Monitor** — The dashboard displays the status information available to the application.
 
-## How It Works
+*The diagram represents the intended system architecture. Exact wiring, firmware behavior, feedback paths, and communication endpoints should be verified against the hardware implementation.*
 
-1. **Connect the controller:** The dashboard provides an ESP32 connection panel for entering the device address and pairing information.
-2. **View system status:** The interface presents the current floor, connection state, door status, and travel progress.
-3. **Choose a floor:** The user selects one of the three floor controls.
-4. **Send an operation:** The dashboard provides movement, door, and ground-floor controls.
-5. **Operate the prototype:** The ESP32 firmware handles the hardware-side operation according to its implemented control logic.
-6. **Observe the interface:** The dashboard presents available device and system information.
+---
 
-Actual movement, sensor feedback, and status synchronization depend on the deployed firmware, network connection, and hardware configuration.
+## 🔩 Hardware Components
 
-## Getting Started
+| Component | Role |
+|---|---|
+| 🧠 ESP32 development board | Embedded control and Wi-Fi connectivity |
+| ⚙️ DC motor | Lift movement |
+| 🔌 Motor driver module | Motor-control interface |
+| 🚪 Servo motor | Door mechanism |
+| 📡 Ultrasonic sensor | Distance sensing and potential obstruction detection |
+| 🖥️ OLED SSD1306 display | Local status display, where configured |
+| 🔋 Power supply | Supplies power to the electronics and actuators |
+| 🧰 Mechanical structure and wiring | Physical lift assembly |
 
-### Prerequisites
+**Note:** Confirm the exact component models, quantities, and wiring against your assembled prototype before reproducing the hardware.
 
-- Node.js and npm.
-- Git.
-- Visual Studio Code or another code editor.
-- An ESP32 development environment if working with the embedded firmware.
-- The hardware and network configuration required for physical operation.
+---
 
-### 1. Clone the repository
+## 💻 Software Stack
+
+<div align="center">
+
+| Technology | Purpose |
+|:---|:---|
+| ⚛️ React | User-interface components |
+| 🔷 TypeScript | Typed application development |
+| ⚡ Vite | Development server and production build |
+| 🎨 CSS | Layout, styling, and visual presentation |
+| 🤖 Spline integration | 3D visual component |
+| 🔴 ESP32 firmware | Embedded device control |
+| ▲ Vercel | Frontend hosting |
+| 🐙 Git & GitHub | Version control and source hosting |
+
+</div>
+
+---
+
+## 🛠️ Getting Started
+
+### 📋 Prerequisites
+
+- [Node.js](https://nodejs.org/) and npm
+- [Git](https://git-scm.com/)
+- [Visual Studio Code](https://code.visualstudio.com/) or another code editor
+- ESP32 development tools if working with the hardware firmware
+
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/vaibhavkumar-h/smart-lift.git
 cd smart-lift
 ```
 
-### 2. Install dependencies
+### 2️⃣ Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Start the development server
+### 3️⃣ Start the Development Server
 
 ```bash
 npm run dev
 ```
 
-Open the local URL printed by Vite in your terminal.
+Open the local URL displayed in your terminal.
 
-### 4. Create a production build
+### 4️⃣ Build for Production
 
 ```bash
 npm run build
 ```
 
-### 5. Preview the production build
+### 5️⃣ Preview the Production Build
 
 ```bash
 npm run preview
 ```
 
-## ESP32 Configuration
+---
 
-The frontend currently contains an ESP32 API address configuration in `src/App.tsx`.
+## 📡 ESP32 Connection Notes
 
-Before using the dashboard with your own hardware:
+The frontend currently defines an ESP32 API address in `src/App.tsx`.
 
-1. Identify the ESP32's current IP address.
-2. Confirm that the computer or browser can reach the device.
-3. Check the API endpoints and request formats expected by the firmware.
-4. Verify that the dashboard and firmware use compatible communication settings.
-5. Never expose Wi-Fi passwords, pairing PINs, private tokens, or other credentials in a public repository.
+Before connecting your own device:
 
-An IP address assigned by a phone hotspot or router may change after reconnection. A reliable remote-access solution requires additional network configuration and secure communication.
+- Verify the ESP32's current IP address.
+- Confirm the API endpoints and request formats implemented by the firmware.
+- Ensure the browser can reach the controller on the configured network.
+- Keep credentials and pairing information out of public source code.
+- Verify reconnection and offline behavior.
 
-## Project Scope and Limitations
+### 🌍 Important: Local Network vs. Internet
 
-- The web dashboard is deployed and available through the live demo link.
-- The repository contains the frontend source code for the dashboard.
-- Physical operation depends on the compatible ESP32 firmware and assembled hardware.
-- A public website does not automatically make a locally connected ESP32 accessible over the internet.
-- Hardware safety, sensor behavior, and emergency-stop behavior must be validated on the actual prototype.
-- This repository should not be treated as a certified or production-ready passenger-elevator controller.
+The live dashboard is hosted on Vercel, but that does not automatically expose a locally connected ESP32 to the public internet.
 
-## Future Scope
-
-- Reliable device addressing and reconnection handling.
-- Secure remote communication between the dashboard and ESP32.
-- Live telemetry and clearer connection diagnostics.
-- Improved sensor-based obstruction detection and fault reporting.
-- Detailed floor-arrival and door-state feedback.
-- Event history and operation logs.
-- Expanded testing of hardware safety and recovery behavior.
-- Further improvements to accessibility and mobile usability.
-
-## Applications
-
-- Embedded-systems and IoT education.
-- Elevator automation demonstrations.
-- Hardware–software integration projects.
-- Interactive monitoring and control interfaces.
-- Prototyping and experimentation with connected devices.
-
-## Project Links
-
-- **Live Dashboard:** https://smart-lift-bay.vercel.app/
-- **Source Code:** https://github.com/vaibhavkumar-h/smart-lift
-
-## Author
-
-**Vaibhav Kumar**  
-BE — Computer Science and Engineering
-
-GitHub: https://github.com/vaibhavkumar-h
+The current project should not be assumed to support secure, internet-wide remote control until a suitable communication path, authentication, and safety validation are implemented and tested.
 
 ---
 
-*Smart Lift is an educational and prototyping project. It is not intended to control a passenger-carrying elevator or replace certified elevator safety systems.*
+## 🔒 Safety & Limitations
+
+This project is intended for educational demonstrations and hardware prototyping.
+
+- Physical movement depends on the actual firmware and hardware setup.
+- Sensor-based safety functions must be verified on the physical prototype.
+- Emergency-stop and fault-handling behavior must be tested independently.
+- The public dashboard should not be treated as a safety-certified controller.
+- Do not operate the prototype unattended or use it to carry passengers.
+- Never publish Wi-Fi passwords, device credentials, or private tokens.
+
+---
+
+## 🔮 Future Enhancements
+
+- [ ] Stable device addressing and automatic reconnection
+- [ ] Secure remote communication with device authentication
+- [ ] Live telemetry and clearer offline diagnostics
+- [ ] Floor-arrival feedback and event logging
+- [ ] Improved sensor-based obstruction handling
+- [ ] Enhanced mobile and accessibility support
+- [ ] More comprehensive hardware and fault-condition testing
+
+---
+
+## 🎓 Applications
+
+- IoT and embedded-systems learning
+- Elevator automation demonstrations
+- Hardware–software integration
+- Web-based device monitoring
+- Prototyping intelligent control interfaces
+
+---
+
+## 🔗 Project Links
+
+<div align="center">
+
+<a href="https://smart-lift-bay.vercel.app/">
+  <img src="https://img.shields.io/badge/🌐_Live_Demo-Visit_Smart_Lift-00C853?style=for-the-badge" alt="Live Demo"/>
+</a>
+
+<a href="https://github.com/vaibhavkumar-h/smart-lift">
+  <img src="https://img.shields.io/badge/🐙_GitHub-View_Source-181717?style=for-the-badge&logo=github" alt="GitHub"/>
+</a>
+
+</div>
+
+---
+
+## 👨‍💻 Author
+
+<div align="center">
+
+### Vaibhav Kumar
+
+**BE — Computer Science and Engineering**
+
+Building projects at the intersection of embedded systems, IoT, and software development.
+
+<a href="https://github.com/vaibhavkumar-h">
+  <img src="https://img.shields.io/badge/GitHub-vaibhavkumar--h-181717?style=for-the-badge&logo=github" alt="Author GitHub"/>
+</a>
+
+</div>
+
+---
+
+<div align="center">
+
+**🛗 Smart Lift — Bringing Connected Control to a Three-Floor Prototype**
+
+<sub>Built for learning, experimentation, and engineering demonstration.</sub>
+
+</div>
